@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MANCOT</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <!-- Css Styles -->
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+</head>
+
+<body style="background-color:powderblue;">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="#">Sign in</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div  class="offcanvas__nav__option" style="">
+            <a href="#" class="search-switch"><img src="{% static 'img/icon/search.png'%}" alt=""></a>
+            <a href="#"><img src="{% static 'img/icon/heart.png'%}" alt=""></a>
+            <a class="cart"><img src="{% static 'img/icon/cart.png'%}" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 7-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    {% if user.is_authenticated %}
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Hello {{ username }},Successfully Logged In</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <a href="signout">Logout</a>
+                                <a href="#">FAQs</a>
+
+                            </div>
+                            <div class="header__top__hover">
+                                <span>RUPEES</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% else %}
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 7-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <a href="signup">Login</a>
+                                <a href="main">Sign in</a>
+                                <a href="#">FAQs</a>
+                            </div>
+                            <div class="header__top__hover">
+                                <span>RUPEES</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div style="background-color:powderblue;">
+        <div  class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header_logo" style="padding-top: 0px;">
+                        <a href="home"><img src="{% static 'img/MANCOT (4).png' %}" alt="" width="100"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="">Home</a></li>
+                            <li><a href="/shop">Shop</a></li>
+                            <li><a href="/about">About Us</a>
+
+                            </li>
+                            <li><a href="/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Hero Section Begin -->
+    <section>
+
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" id="carousel-slider">
+    <div class="carousel-item active">
+      <img  src="{% static 'img/hero/11.jpg' %}" style="padding-top:15px;padding-left:75px;padding-right:75px;" alt="Los Angeles">
+        <div class="container">
+            <div class="carousel-caption">
+                <h1 style="font-size: 40px;text-align: left;padding-bottom:100px;">MANCOT PRESENTS<br>SUMMER SALE<BR>2023</h1>
+                <button type="button" class="btn btn-dark" style="text-align: left;" ><a href="shop" style="color:#ffffff;">SHOP NOW</a></button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'img/hero/12.jpg' %}" style="padding-top:15px;padding-left:75px;padding-right:75px;" alt="Chicago">
+        <div class="container">
+            <div class="carousel-caption">
+
+            <h1 style="font-size: 40px;text-align: left;padding-bottom:100px;">MANCOT PRESENTS<br>SUMMER SALE<BR>2023</h1>
+            <button type="button" class="btn btn-dark" style="text-align: left;" ><a href="shop" style="color:#ffffff;">SHOP NOW</a></button>
+            </div>
+
+        </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+</div>
+    </section>
+
+    <!-- Hero Section End -->
+
+    <!-- Banner Section Begin -->
+    <!-- Banner Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container" style="padding-top:100px;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="filter__controls">
+                        <li class="active" data-filter="*">Best Sellers</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container" style="display:flex;">
+
+            {% for Product in Product %}
+           <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
+                    <div class="product__item" style="background-color:#ffffff">
+                        <div class="product__item__pic set-bg" data-setbg="{{Product.image.url}}">
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="{% static 'img/icon/heart.png' %}" alt=""></a></li>
+                                <li><a href="#"><img src="{% static 'img/icon/compare.png' %}" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="{% static 'img/icon/search.png' %}" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6>{{Product.product_name}}</h6>
+                            <div class="rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <h5>₹{{Product.prize}}</h5>
+                            <div class="product__color__select">
+                                <div class="btn-group">
+                <a class="btn btn-dark" href="product/{{Product.product_id}}" style="padding-bottom:20px;background-color:#000000"><b>Shop Now</b></a>
+                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+    </div>
+            </div>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Categories Section Begin -->
+    <!-- Categories Section End -->
+
+    <!-- Instagram Section Begin -->
+    <section class="instagram spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="instagram__pic">
+                        <div class="instagram__pic__item set-bg" data-setbg="{% static 'img/instagram/instagram-1.jpg' %}"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="{% static 'img/instagram/instagram-2.jpg' %}"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="{% static 'img/instagram/instagram-3.jpg' %}"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="{% static 'img/instagram/instagram-4.jpg' %}"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="{% static 'img/instagram/instagram-5.jpg' %}"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="{% static 'img/instagram/instagram-6.jpg' %}"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="instagram__text">
+                        <h2><a  href="https://instagram.com/man_cot369?igshid=OGQ5ZDc2ODk2ZA==" style="color:#FF0000;font-family: 'Courier New', monospace; "  >MANCOT</a></h2>
+                        <p>Discover Timeless Style at Mancot - Your Ultimate Destination for Men's Clothing Welcome to Mancot, where sophistication meets comfort in every stitch. We specialize in providing men with a curated selection of premium clothing that defines style, quality, and versatility. Our meticulously crafted collections encompass a wide range of fashion essentials, ensuring you're always dressed to impress.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Instagram Section End -->
+
+    <!-- Latest Blog Section Begin -->
+    <section class="latest spad">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </section>
+    <!-- Latest Blog Section End -->
+
+    <!-- Footer Section Begin -->
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="home"><img src="{% static 'img/MANCOT (4).png'%}" height="225" width="275" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="{% static 'img/payment.png'%}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="/shop">Clothing Store</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About us</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nicescroll.min.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js'%}"></script>
+    <script src="{% static 'js/jquery.slicknav.js'%}"></script>
+    <script src="{% static 'js/mixitup.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+    <script>
+        $("#carousel-slider").slick({
+    arrows: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    mobileFirst: true
+});
+    </script>
+
+
+</body>
+
+</html>

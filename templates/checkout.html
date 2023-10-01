@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Male-Fashion | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="#">Sign in</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div  class="offcanvas__nav__option" style="">
+            <a href="#" class="search-switch"><img src="{% static 'img/icon/search.png'%}" alt=""></a>
+            <a href="#"><img src="{% static 'img/icon/heart.png'%}" alt=""></a>
+            <a href="#"><img src="{% static 'img/icon/cart.png'%}" alt=""> <span >0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 7-day return or refund guarantee.</p>
+        </div>
+    </div>   <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+
+    {% if user.is_authenticated %}
+
+    {% else %}
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 7-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <a href="signup">Login</a>
+                                <a href="main">Sign in</a>
+                                <a href="#">FAQs</a>
+                            </div>
+                            <div class="header__top__hover">
+                                <span>RUPEES</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+
+
+
+
+        <div style="background-color:powderblue;">
+        <div  class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header_logo" style="padding-top: 0px;">
+                        <a href="home"><img src="{% static 'img/MANCOT (4).png' %}" alt="" width="100"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li ><a href="/">Home</a></li>
+                            <li class="active"><a href="/shop">Shop</a></li>
+                            <li><a href="/about">About Us</a>
+                            </li>
+                            <li><a href="/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="{% static 'img/icon/search.png' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'img/icon/heart.png' %}" alt=""></a>
+                        <a href=""><img src="{% static 'img/icon/cart.png' %}" alt=""> <span id="cart">0</span></a>
+                        <div class="price">$0.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+        </div>
+    </header>
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Check Out</h4>
+                        <div class="breadcrumb__links">
+                            <a href="/">Home</a>
+                            <a href="/shop">Shop</a>
+                            <span>Check Out</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <form action="/checkout/{{product.product_id}}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <h6 class="checkout__title">Billing Details</h6>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Fist Name<span>*</span></p>
+                                        <input name ="f_name" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Last Name<span>*</span></p>
+                                        <input type="text" name ="l_name" required>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Country<span>*</span></p>
+                                <input type="text" name ="country" required>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Enter Size Of Product<span></span></p>
+                                <input type="text" name ="size" required>
+                            </div>
+
+                            <div class="checkout__input">
+                                <p>Address<span>*</span></p>
+                                <input required type="text" placeholder="Street Address" class="checkout__input__add" name ="address">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Town/City<span>*</span></p>
+                                <input type="text" name ="city" required>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Country/State<span>*</span></p>
+                                <input type="text" name ="state" required>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Postcode / ZIP<span>*</span></p>
+                                <input type="text" name ="postcode" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Phone<span>*</span></p>
+                                        <input type="text" name ="number" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Email<span>*</span></p>
+                                        <input type="text" name ="email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Order notes<span>*</span></p>
+                                <input type="text" name ="notes"
+                                placeholder="Notes about your order, e.g. special notes for delivery.">
+                            </div>
+                            <div class="checkout__input">
+                                <p >Payment Completed<span>*</span></p>
+                                <input type="text" name ="answer"
+                                placeholder="Yes or No" required>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4 class="order__title">Your order</h4>
+                                <div class="checkout__order__products">Product <span>Total</span></div>
+                                <ul class="checkout__total__products">
+                                    <li>{{product.product_name}} <span>RS.{{product.prize}}</span></li>
+                                </ul>
+                                <ul class="checkout__total__all">
+                                    <li>Subtotal <span>RS.{{product.prize}}</span></li>
+                                    <li>Total <span>RS.{{product.prize}}</span></li>
+                                </ul>
+                                <div class="checkout__input__checkbox">
+                                    <div class="container">
+                                        <p>Before Placing Order We request you to Scan the QR and do the payment</p>
+                                        <img src="{% static 'img/qr.jpg' %}">
+                                    </div>
+                                </div>
+                                <button type="submit" class="site-btn">PLACE ORDER</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+
+    <!-- Footer Section Begin -->
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="home"><img src="{% static 'img/MANCOT (4).png'%}" height="225" width="275" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="{% static 'img/payment.png'%}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="/shop">Clothing Store</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About us</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nicescroll.min.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js'%}"></script>
+    <script src="{% static 'js/jquery.slicknav.js'%}"></script>
+    <script src="{% static 'js/mixitup.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+    <script>
+        $("#carousel-slider").slick({
+    arrows: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    mobileFirst: true
+});
+    </script>
+
+</body>
+
+</html>

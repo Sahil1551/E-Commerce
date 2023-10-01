@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MANCOT</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <style>
+        .product-card-10 {
+    border: 1px solid var(--bs-gray-300)
+}
+
+.product-card-10 .product-card-image {
+    position: relative
+}
+
+.product-card-10 .badge-ribbon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: var(--bs-danger);
+    color: var(--bs-white);
+    z-index: 1;
+    border-radius: 50%
+}
+
+.product-card-10 .product-media {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--bs-gray-300)
+}
+
+.product-card-10 .product-media img {
+    transition: ease all .35s;
+    transform: scale(1)
+}
+
+.product-card-10 .product-action {
+    padding-top: 8px
+}
+
+.product-card-10 .product-action .btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    margin: 0 2px;
+    padding: 0
+}
+
+@media (max-width:575.98px) {
+    .product-card-10 .product-action .btn {
+        width: 26px;
+        height: 26px;
+        margin: 1px;
+        font-size: 12px
+    }
+}
+
+.product-card-10 .product-action .btn:hover {
+    background: var(--bs-dark);
+    color: var(--bs-white)
+}
+
+.product-card-10 .product-card-info {
+    text-align: center;
+    padding: 15px
+}
+
+@media (max-width:575.98px) {
+    .product-card-10 .product-card-info {
+        padding: 8px
+    }
+}
+
+.product-card-10 .rating-star {
+    font-size: 12px;
+    margin-bottom: 5px
+}
+
+.product-card-10 .product-title {
+    font-size: 14px;
+    margin: 0
+}
+
+.product-card-10 .product-title a {
+    color: var(--bs-dark)
+}
+
+.product-card-10 .product-price {
+    margin-top: 8px;
+    line-height: normal
+}
+
+.product-card-10:hover .product-media img {
+    transform: scale(1.03)
+}
+a {
+text-decoration:none;
+}
+    </style>
+</head>
+
+<body style="background-color:powderblue;">
+    <!-- Page Preloder -->
+        <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="#">Sign in</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div  class="offcanvas__nav__option" style="">
+            <a href="#" class="search-switch"><img src="{% static 'img/icon/search.png'%}" alt=""></a>
+            <a href="#"><img src="{% static 'img/icon/heart.png'%}" alt=""></a>
+            <a class="cart"><img src="{% static 'img/icon/cart.png'%}" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 7-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    {% if user.is_authenticated %}
+    {% else %}
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 7-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <a href="signup">Login</a>
+                                <a href="main">Sign in</a>
+                                <a href="#">FAQs</a>
+                            </div>
+                            <div class="header__top__hover">
+                                <span>RUPEES</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div style="background-color:powderblue;">
+        <div  class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header_logo" style="padding-top: 0px;">
+                        <a href="home"><img src="{% static 'img/MANCOT (4).png' %}" alt="" width="100"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li ><a href="/">Home</a></li>
+                            <li class="active"><a href="/shop">Shop</a></li>
+                            <li><a href="/about">About Us</a>
+
+                            </li>
+                            <li><a href="/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+        </div>
+    </header>
+        <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>SHOP</h4>
+                        <div class="breadcrumb__links">
+                            <a href="home">Home</a>
+                            <span>SHOP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Header Section End -->
+    <!-- Hero Section Begin -->
+
+    <!-- Banner Section Begin -->
+    <!-- Banner Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="shop spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="shop__sidebar">
+                        <div class="shop__sidebar__search">
+                            <form action="#">
+                                <input type="text" placeholder="Search...">
+                                <button type="submit"><span class="icon_search"></span></button>
+                            </form>
+                        </div>
+                        <div class="shop__sidebar__accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__categories">
+                                                <ul class="nice-scroll" style>
+                                                    {% for a in cat %}
+                                                    {% ifchanged  %}
+                                                    <li><a href="#">{{a.sub_category}}</a></li>
+                                                    {% endifchanged %}
+                                                    {% endfor %}
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseTwo">Special Collection</a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__brand">
+                                                <ul>
+                                                    <li><a href="#">Ramayan Collection</a></li>
+                                                    <li><a href="#">Mahabharat Collection</a></li>
+                                                    <li><a href="#">Embroidery Collection</a></li>
+                                                    <li><a href="#">Premium Collection</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="shop__product__option">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="shop__product__option__right">
+                                    <p>Sort by Price:</p>
+                                    <select>
+                                        <option value="">Low To High</option>
+                                        <option value="">High to low</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                                    <div class="container" style="display:flex;">
+
+            {% for Product in Product %}
+           <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
+                    <div class="product__item" style="background-color:#ffffff">
+                        <div class="product__item__pic set-bg" data-setbg="{{Product.image.url}}">
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="{% static 'img/icon/heart.png' %}" alt=""></a></li>
+                                <li><a href="#"><img src="{% static 'img/icon/compare.png' %}" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="{% static 'img/icon/search.png' %}" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6>{{Product.product_name}}</h6>
+                            <a  id="{{Product.product_id}}" class="add-cart cart">+ Add To Cart</a>
+                            <div class="rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <h5>₹{{Product.prize}}</h5>
+                            <div class="product__color__select">
+                                <div class="btn-group">
+                <a class="btn btn-dark" href="/product/{{Product.product_id}} " style="padding-bottom:20px;background-color:#000000"><b>Shop Now</b></a>
+                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+    </div>
+
+                    </div>
+                    <div class="row">
+                            <div class="col-lg-12">
+                            <div class="product__pagination">
+                                {% if Product.has_previous %}
+                                <a href="?page={{Product.previous_page_number}}" class="previous round">&#8249;</a>
+
+                                {% endif %}
+                                    Page{{Product.number}} of {{Product.paginator.num_pages}}
+                                {% if Product.has_next %}
+
+                                <a href="?page={{Product.next_page_number}}">&#8250;</a>
+
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section End -->
+
+    <!-- Categories Section Begin -->
+    <!-- Categories Section End -->
+
+    <!-- Instagram Section Begin -->
+    <!-- Instagram Section End -->
+
+    <!-- Latest Blog Section Begin -->
+    <!-- Latest Blog Section End -->
+
+    <!-- Footer Section Begin -->
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="home"><img src="{% static 'img/MANCOT (4).png'%}" height="225" width="275" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="{% static 'img/payment.png'%}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="/shop">Clothing Store</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About us</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nicescroll.min.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js'%}"></script>
+    <script src="{% static 'js/jquery.slicknav.js'%}"></script>
+    <script src="{% static 'js/mixitup.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+    <script>
+    console.log('working');
+    if(localStorage.getItem('cart')==null){
+    var cart={};
+    }
+    else{
+        cart=JSON.parse(localStorage.getItem('cart'));
+        document.getElementById('cart').innerHTML=Object.keys(cart).length;
+    }
+    $('.cart').click(function(){
+        console.log('clicked');
+        var idstr= this.id.toString();
+        console.log(idstr)
+        if(cart[idstr]!=undefined){
+        cart[idstr] =cart[idstr]+1;
+        }
+        else{
+            cart[idstr]=1;
+        }
+        console.log(cart);
+        localStorage.setItem('cart',JSON.stringify(cart))
+    });
+    $("#carousel-slider").slick({
+    arrows: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    mobileFirst: true
+});
+ $('.btnNext').click(function(){
+  $('.nav-tabs > .active').next('li').find('a').trigger('click');
+});
+
+  $('.btnPrevious').click(function(){
+  $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+});
+$('.btnNext').click(function(){
+  $('.nav-tabs > .active').next('li').find('a').trigger('click');
+});
+
+  $('.btnPrevious').click(function(){
+  $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+});
+    </script>
+
+</body>
+
+</html>

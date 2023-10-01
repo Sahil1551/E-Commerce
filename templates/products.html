@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MANCOT</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <!-- Css Styles -->
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+</head>
+
+<body style="background-color:powderblue;">
+    <!-- Page Preloder -->
+        <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="#">Sign in</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div  class="offcanvas__nav__option" style="">
+            <a href="#" class="search-switch"><img src="{% static 'img/icon/search.png'%}" alt=""></a>
+            <a href="#"><img src="{% static 'img/icon/heart.png'%}" alt=""></a>
+            <a class="cart"><img src="{% static 'img/icon/cart.png'%}" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 7-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    {% if user.is_authenticated %}
+    {% else %}
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 7-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <a href="signup">Login</a>
+                                <a href="main">Sign in</a>
+                            </div>
+                            <div class="header__top__hover">
+                                <span>RUPEES</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div style="background-color:powderblue;">
+        <div  class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header_logo" style="padding-top: 0px;">
+                        <a href="home"><img src="{% static 'img/MANCOT (4).png' %}" alt="" width="100"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="">Home</a></li>
+                            <li><a href="/shop">Shop</a></li>
+                            <li><a href="/about">About Us</a>
+
+                            </li>
+                            <li><a href="/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+        </div>
+    </header>
+<!-- Product section -->
+    <section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="padding-top:50px;">
+                    <div class="row">
+                    <img src="{{product.image.url}}" style="padding-bottom:200px;" height="750">
+                    </div>
+                    </div>
+                <div  class="col-md-8">
+                    <h2 style="padding-top:40px;">
+                        {{product.product_name}}
+
+                        <A style="font-size:20px;padding-left:120px;">Rs.{{product.prize}}.00 <UL style="font-size:9px;padding-left:680px;">TAX INCLUDED.</UL></A>
+
+                        <div class="jumbotron" style="background-color:#ffffff">
+
+                            <p style="padding-bottom:100px;">COLOR : BLACK <BR STYLE="">SIZE AVAILABLE : S  M  L  XL<BR>QUALITY BEST <BR>SHIPPED FREE</p>
+                            <p></p>
+                            <a  href="cart/{{product.product_id}}" class=" btn btn-dark btn-lg btn-block cart" style="background-color:#000000; color:#ffffff; " >Shop Now</a>
+
+                            <div id="accordion" style=" padding-top:30px;">
+                            <div class="card">
+                                <div class="card-header" style="background-color:#000000;" id="headingOne">
+                                    <h5 class="mb-0" >
+                                        <button class="btn dbtn-dark" style="color:#ffffff;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            DESCRIPTION <span style="padding-left:500px;">+</span>
+                                        </button>
+                                    </h5>
+                                </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                              <div class="card-body">
+                                  <P>{{product.desc}}</P>
+                                </div>
+
+                              </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" style="background-color:#000000;" id="headingTwo">
+                              <h5 class="mb-0">
+                                <button class="btn dbtn-dark collapsed" style="background-color:#000000; color:#ffffff;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        RETURN <span style="padding-left:540px;">+</span>
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                              <div class="card-body">
+                                <p><b>Shipping</b>
+<br>
+                                 <b>
+We dispatch your order every day at 4 pm except on public holidays.
+<br>
+After dispatch, it takes about:
+<br>
+2 to 5 working days for metro cities
+4 to 7 working days for the rest of India.
+We ship your order from Mumbai, Maharashtra.
+<br>
+                                     </b>
+                                    <br>
+Returns
+<br>
+                                    <br>
+Incase of return items must be returned in their original condition with our box + packaging + tags / labels as delivered to you, or it will not be accepted by our warehouse.
+                                </p></div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" style="background-color:#000000;" id="headingThree">
+                              <h5 class="mb-0">
+                                <button class="btn dbtn-link collapsed" style="color:#ffffff;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  CARE GUIDE <span style="padding-left:510px;">+</span>
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                              <div class="card-body">
+
+                                  <p>please follow care label on clothing.<br>
+all our clothing is hand wash, please ensure to always use cold water.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                            </div>
+
+
+                    </h2><br><br>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Footer Section Begin -->
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="home"><img src="{% static 'img/MANCOT (4).png'%}" height="225" width="275" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="{% static 'img/payment.png'%}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="/shop">Clothing Store</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About us</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nicescroll.min.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js'%}"></script>
+    <script src="{% static 'js/jquery.slicknav.js'%}"></script>
+    <script src="{% static 'js/mixitup.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    <script>
+    </script>
+
+</body>
+
+</html>
